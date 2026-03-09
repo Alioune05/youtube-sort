@@ -11,8 +11,8 @@
 // @grant        GM_xmlhttpRequest
 // @connect      www.youtube.com
 // @run-at       document-idle
-// @updateURL    https://raw.githubusercontent.com/Alioune05/youtube-sort/master/youtube-tab-sorter.user.js
-// @downloadURL  https://raw.githubusercontent.com/Alioune05/youtube-sort/master/youtube-tab-sorter.user.js
+// @updateURL    https://raw.githubusercontent.com/Alioune05/youtube-sort/master/tampermonkey/youtube-tab-sorter.user.js
+// @downloadURL  https://raw.githubusercontent.com/Alioune05/youtube-sort/master/tampermonkey/youtube-tab-sorter.user.js
 // @homepageURL  https://github.com/Alioune05/youtube-sort
 // @supportURL   https://github.com/Alioune05/youtube-sort/issues
 // ==/UserScript==
