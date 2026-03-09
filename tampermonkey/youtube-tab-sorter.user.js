@@ -25,19 +25,6 @@
   if (document.getElementById('yts-btn')) return;
 
   // ---------------------------------------------------------------------------
-  // One-time migration from local script via localStorage
-  // ---------------------------------------------------------------------------
-  (function migrate() {
-    const exported = localStorage.getItem('yts_export');
-    if (!exported || exported === '{}') return;
-    const existing = GM_getValue('yt_sorter_v1', '{}');
-    if (existing && existing !== '{}') return; // already has data, skip
-    GM_setValue('yt_sorter_v1', exported);
-    localStorage.removeItem('yts_export');
-    console.log('[YTS] Migration depuis le script local effectuée.');
-  })();
-
-  // ---------------------------------------------------------------------------
   // Duration extraction
   // ---------------------------------------------------------------------------
   function getDuration() {
