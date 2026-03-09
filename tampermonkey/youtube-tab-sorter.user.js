@@ -15,6 +15,7 @@
 // @downloadURL  https://raw.githubusercontent.com/Alioune05/youtube-sort/master/tampermonkey/youtube-tab-sorter.user.js
 // @homepageURL  https://github.com/Alioune05/youtube-sort
 // @supportURL   https://github.com/Alioune05/youtube-sort/issues
+// @icon         https://www.youtube.com/favicon.ico
 // ==/UserScript==
 
 (function () {
@@ -260,8 +261,13 @@
     btn.id = 'yts-btn';
     btn.setAttribute('style', S.btn);
 
+    const btnIcon = document.createElement('img');
+    btnIcon.src = 'https://www.youtube.com/favicon.ico';
+    btnIcon.setAttribute('style', 'width:14px; height:14px; flex-shrink:0; vertical-align:middle;');
+    btnIcon.alt = '';
+
     const btnLabel = document.createElement('span');
-    btnLabel.textContent = '≡ Sort tabs';
+    btnLabel.textContent = 'Sort tabs';
 
     const btnDot = document.createElement('span');
     btnDot.id = 'yts-dot';
@@ -269,6 +275,7 @@
       background:#555; margin-left:4px; vertical-align:middle; flex-shrink:0;`);
     btnDot.title = 'Checking...';
 
+    btn.appendChild(btnIcon);
     btn.appendChild(btnLabel);
     btn.appendChild(btnDot);
 
