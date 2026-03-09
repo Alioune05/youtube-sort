@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Tab Sorter</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f0f0f;
+      color: #f1f1f1;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px 12px;
+      border-bottom: 1px solid #272727;
+    }
+
+    header svg { flex-shrink: 0; }
+
+    header h1 {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .controls {
+      padding: 12px 16px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 9px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+    .btn:not(:disabled):hover { opacity: 0.85; }
+
+    .btn-asc  { background: #ff0000; color: #fff; }
+    .btn-desc { background: #272727; color: #f1f1f1; }
+
+    #status {
+      padding: 0 16px 12px;
+      font-size: 12px;
+      color: #aaa;
+      min-height: 18px;
+    }
+    #status.error { color: #ff6b6b; }
+    #status.success { color: #4caf50; }
+
+    #tab-list {
+      border-top: 1px solid #272727;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+
+    .tab-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 16px;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    .tab-item:last-child { border-bottom: none; }
+
+    .tab-thumb {
+      width: 48px;
+      height: 27px;
+      border-radius: 3px;
+      background: #272727;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .tab-info { flex: 1; min-width: 0; }
+
+    .tab-title {
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #f1f1f1;
+    }
+
+    .tab-duration {
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 2px;
+    }
+    .tab-duration.unknown { color: #666; font-style: italic; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+  </style>
+</head>
+<body>
+  <header>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <rect width="24" height="24" rx="5" fill="#ff0000"/>
+      <polygon points="10,8 17,12 10,16" fill="white"/>
+    </svg>
+    <h1>YouTube Tab Sorter</h1>
+  </header>
+
+  <div class="controls">
+    <button class="btn btn-asc"  id="btn-asc"  disabled>Shortest first</button>
+    <button class="btn btn-desc" id="btn-desc" disabled>Longest first</button>
+  </div>
+
+  <div id="status">Scanning YouTube tabs...</div>
+  <div id="tab-list"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
