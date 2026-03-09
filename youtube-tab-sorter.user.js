@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         YouTube Tab Sorter
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/Alioune05/youtube-sort
 // @version      1.1.0
 // @description  Track and sort your YouTube videos by duration via a floating panel
-// @author       You
+// @author       Alioune05
 // @match        *://www.youtube.com/watch*
 // @grant        GM_setValue
 // @grant        GM_getValue
@@ -11,6 +11,10 @@
 // @grant        GM_xmlhttpRequest
 // @connect      www.youtube.com
 // @run-at       document-idle
+// @updateURL    https://raw.githubusercontent.com/Alioune05/youtube-sort/master/youtube-tab-sorter.user.js
+// @downloadURL  https://raw.githubusercontent.com/Alioune05/youtube-sort/master/youtube-tab-sorter.user.js
+// @homepageURL  https://github.com/Alioune05/youtube-sort
+// @supportURL   https://github.com/Alioune05/youtube-sort/issues
 // ==/UserScript==
 
 (function () {

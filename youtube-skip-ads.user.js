@@ -1,12 +1,16 @@
 // ==UserScript==
 // @name         YouTube Auto Skip Ads
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/Alioune05/youtube-sort
 // @version      1.1.0
 // @description  Skip YouTube ads automatically as soon as possible
-// @author       You
+// @author       Alioune05
 // @match        *://www.youtube.com/*
 // @grant        none
 // @run-at       document-idle
+// @updateURL    https://raw.githubusercontent.com/Alioune05/youtube-sort/master/youtube-skip-ads.user.js
+// @downloadURL  https://raw.githubusercontent.com/Alioune05/youtube-sort/master/youtube-skip-ads.user.js
+// @homepageURL  https://github.com/Alioune05/youtube-sort
+// @supportURL   https://github.com/Alioune05/youtube-sort/issues
 // ==/UserScript==
 
 (function () {
